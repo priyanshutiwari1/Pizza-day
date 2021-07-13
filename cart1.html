@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Permanent+Marker&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@600&family=Ubuntu+Mono&display=swap" rel="stylesheet">
+    <title>PIZZADAY</title>
+    <link rel="stylesheet" href="CSS/cart1.css">
+</head>
+<body>
+    <section id="background">
+    <div id="menu" onclick="appear()">
+        <img src="images/iconfinder_menu-alt_134216.png" alt="" srcset="">
+    </div>
+    <div id="ham-menu">
+        <div id="cross" onclick="disappear()">✖</div><hr style="background-color: #00ff33;">
+        <div class="menu-items"><a href="#">Home <hr></a></div>
+        <div class="menu-items"><a href="#">About Us <hr></a></div>
+        <div class="menu-items"><a href="MENU.html">Menu <hr></a></div>
+        <div class="menu-items"><a href="#">Contact Us <hr></a></div>
+        <div class="menu-items"><a href="CART.html">Cart <hr></a></div>
+    </div>
+    
+    <div id="name">
+        PizzaDay
+    </div>
+    
+    
+    <div class="card-items card">
+        <div class="cart-rows">
+        <img src="https://images.pexels.com/photos/1049626/pexels-photo-1049626.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Margrita" style="width:100%">
+        <h1>Margrita Pizza</h1>
+        <p class="cart-price price">$19.99</p>
+        <p >MEDIUM</p>
+        <p>Quantity : <input class="cart-quantity" type = "number" value = "1" > </p>
+        <p><button class="btn-danger">Remove</button></p>
+    </div>
+    </div>
+    <div class="card card-items">
+        <div class="cart-rows">
+        <img src="https://images.pexels.com/photos/1049626/pexels-photo-1049626.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Margrita" style="width:100%">
+        <h1>Margrita Pizza</h1>
+        <p class="cart-price price">$19.99</p>
+        <p >MEDIUM</p>
+        <p >Quantity : <input class="cart-quantity" type = "number" value = "1" > </p>
+        <p><button  class="btn-danger">Remove</button></p>
+        </div>
+    </div>
+    
+    </body>
+    </html>
+    
+<footer>
+    <div id="emty"></div>
+    <div id="empty"></div>
+    <div id="socials">
+        <a href="https://www.facebook.com/groups/1072145456551406/"><img src="images/—Pngtree—facebook logo icon fb logo_3570308.png" alt="" srcset=""></a>
+        <a href="https://www.instagram.com/pizzaday.ua/"><img src="images/—Pngtree—instagram icon instagram logo_3584853.png" alt="" srcset=""></a>
+        <img src="images/5a3a185132ceb1.89894673151375675320812609.png" alt="" srcset="">
+    </div>
+    <div id="nav1">
+        
+    <a href="home.html"><br>Home » </a>
+    <a href="about.html">About Us » </a>
+    <a href="MENU.html">Menu » </a>
+</div>
+<div id="nav2">
+    <a href="CART.html"  onclick="orderPage()">Cart » </a>
+    <a href="contact.html">Contact Us</a>
+</div>
+<div id="copyright">© 2021 PizzaDay || all rights reserved</div>
+</footer>
+</body>
+<script>
+    var remove = document.getElementsByClassName("btn-danger");
+    for (var i = 0; i <remove.length; i++) {
+        var button = remove[i];
+        button.addEventListener('click',function (event) {
+            var buttonClicked = event.target
+            buttonClicked.parentElement.parentElement.remove()
+           updateTotal()
+        })
+    }
+    function updateTotal() {
+    var cartItemContainer = document.getElementsByClassName('card-items')[0]
+    var cartRows = cartItemContainer.getElementsByClassName('cart-rows')
+    var total = 0
+    for (var i = 0; i < cartRows.length; i++) {
+        var cartRow = cartRows[i]
+        var priceElement = cartRow.getElementsByClassName('cart-price')[0]
+        var quantityElement = cartRow.getElementsByClassName('cart-quantity')[0]
+        var price = parseFloat(priceElement.innerText.replace('$',''))
+         var quantity = quantityElement.value
+        total = total + (price * quantity)
+        console.log(price * quantity );
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // var pizza = localStorage.getItem("Pizzas")
+    // document.getElementById("pizzaNames").innerHTML = pizza;
+    // var size = localStorage.getItem("Sizes")
+    // document.getElementById("Pizza-Sizes").innerHTML = size;
+    // var rate = localStorage.getItem("Prizes")
+    // document.getElementById("Pizza-Rates").innerHTML = rate;
+</script>
+<script src="JS/cart.js"></script>
+</html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Permanent+Marker&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@600&family=Ubuntu+Mono&display=swap"
+        rel="stylesheet">
+    <title>PizzaDay</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #background {
+            background: url(images/back1.png);
+            width: 100%;
+            height: 100vh;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        #name {
+            position: absolute;
+            display: inline-block;
+            color: aliceblue;
+            font-size: 3.9rem;
+            margin-top: 50px;
+            padding: 5px;
+            font-weight: bolder;
+            font-family: 'Sedgwick Ave', cursive;
+            z-index: 11;
+        }
+
+        #ham-menu {
+            z-index: 2;
+            position: absolute;
+            left: 0;
+            top: 0%;
+            background-color: #3f0404;
+            height: 36%;
+            width: 0%;
+            /* display: none; */
+            transition: 0.7s;
+        }
+
+        #cross {
+            display: none;
+            font-size: 2rem;
+            position: relative;
+            padding: 40px 29px;
+            padding-bottom: 25px;
+            color: aliceblue;
+            cursor: pointer;
+
+        }
+
+        #cross:hover {
+            transform: rotate(10deg);
+            transition: transform 1s;
+        }
+
+        .menu-items a {
+
+            padding: 0px;
+            font-size: 1.2rem;
+            color: white;
+            text-decoration: none;
+        }
+
+        .menu-items a:hover {
+            color: rgb(83, 255, 241);
+        }
+
+        .menu-items {
+            display: none;
+            margin-top: 10px;
+            transition: 0.5s;
+            text-align: center;
+        }
+
+        .menu-items hr {
+            margin-bottom: 2px;
+        }
+
+        #menu {
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        #menu img {
+            filter: invert(1);
+            height: 70px;
+            margin: 50px;
+            margin-left: 37px;
+        }
+
+        #img {
+
+            margin-right: 20px;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .banner-area {
+            display: inline-block;
+            position: absolute;
+            top: 22%;
+            left: 8%;
+            color: antiquewhite;
+        }
+
+        .banner-area h1 {
+            font-size: 4rem;
+            text-align: left;
+            font-weight: bolder;
+            font-family: 'Yusei Magic', sans-serif;
+        }
+
+        .type {
+            font-size: 2.3rem;
+            font-family: 'Yusei Magic', sans-serif;
+        }
+
+        #btn1,#btn2 {
+            position: absolute;
+            background: -webkit-linear-gradient(left, #ff3333, #fa8c42);
+            transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            font-size: 1.4rem;
+            padding: 5px 8px;
+            border-radius: 30px;
+            color: #ffffff;
+            top: 75%;
+            display: inline;
+            left: 8.2%;
+            text-align: center;
+            width: 200px;
+            font-weight: bolder;
+            cursor: pointer;
+        }
+        #btn2{
+            left: 28.2%;
+        }
+        #text{
+            color: white;
+            position: absolute;
+            top: 47%;
+            left: 8%;
+            width: 40%;
+            font-size: 1.2rem;
+        }
+        #btn1:hover, #btn2:hover {
+            background: -webkit-linear-gradient(right, #ff3333, #fa8c42);
+            /* text-decoration: underline; */
+            color: aqua;
+        }
+        #socials
+{
+    grid-area: "socials";
+}
+#nav1{
+    grid-area: "nav1";
+    font-size: 1rem;
+    color: white;
+    text-decoration: none;
+}
+#nav2{
+    grid-area: "nav2";
+    
+}
+#nav1 a , #nav2 a{
+    font-size: 1.3rem;
+    color: white;
+    text-decoration: none;
+    padding: 0px 12px;
+}
+#nav1 a:hover , #nav2 a:hover{
+    color: #00ff2b;
+}
+#copyright{
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 1rem;
+    grid-area: "copy";
+    color: rgb(148, 148, 148);
+}
+#copyright:hover{
+    color: #ff3c01;
+}
+#emty{
+    grid-area: "mt";
+    /* height: 80px; */
+}
+#empty{
+    grid-area: "emty";
+    /* height: 80px; */
+}
+footer{
+    display: grid;
+    grid-template-areas:'mt mt'
+    'emty emyt'
+    'socials socials'
+    'nav1 nav 1'
+    'nav2 nav2'
+    'copy copy'
+    'emty emty'
+    'mt mt';
+    text-align: center;
+    background-color:#000415;
+    color: #d8cdc6;
+    width: 100%;
+    height: 390px;
+    top: 101%;
+    position: absolute;
+    
+}
+
+footer img{
+    height: 80px;
+    width: 80px;
+}
+footer img:hover{
+    filter: invert(1);
+}
+    </style>
+</head>
+
+<body>
+    <div id="background">
+        <div id="menu" onclick="appear()">
+            <img src="images/iconfinder_menu-alt_134216.png" alt="" srcset="">
+        </div>
+        <div id="ham-menu">
+            <div id="cross" onclick="disappear()"><span id="rotate">✖</span></div>
+            <hr style="background-color: #00ff33;">
+            <div class="menu-items"><a href="home.html">Home
+                    <hr>
+                </a></div>
+            <div class="menu-items"><a href="about.html">About Us
+                    <hr>
+                </a></div>
+            <div class="menu-items"><a href="MENU.html">Menu
+                    <hr>
+                </a></div>
+            <div class="menu-items"><a href="contact.html">Contact Us
+                    <hr>
+                </a></div>
+            <div class="menu-items"><a href="CART.html">Cart
+                    <hr>
+                </a></div>
+        </div>
+        <div id="name">
+            PizzaDay
+        </div>
+        <div class="banner-area">
+            <h1>HEY FOODIE<br><span class=type id="welcome"></span>
+            </h1>
+        </div>
+        <script src="typed.js-master/lib/typed.js"></script>
+        <script>
+            var typed = new Typed('.type', {
+                strings:
+                    ["WELCOME TO PIZZADAY.",
+                        "WE SERVE THE BEST PIZZA'S."
+                    ],
+                typeSpeed: 30,
+                backspeed: 30,
+                loop: true
+            });
+        </script>
+    </div>
+    <div id="text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores consequuntur tempora, provident est
+        excepturi officiis tenetur, ad incidunt ratione, nobis amet repudiandae natus. Laborum aspernatur veniam
+        adipisci excepturi ab, laudantium ea ipsum asperiores debitis? Aspernatur dolores possimus similique,
+        accusantium itaque et ut assumenda ab perspiciatis excepturi. Possimus culpa quam accusantium necessitatibus
+        mollitia harum cumque blanditiis recusandae minus id itaque a adipisci error incidunt, eaque repudiandae dolores
+        fuga facere pariatur deleniti temporibus delectus? Laborum, nam.</div>
+    <a href="MENU.html"><btn id="btn1">ORDER NOW</btn></a>
+    <a href="CART.html"><btn id="btn2">GO TO CART</btn></a>
+    <div id="img">
+        <img src="images/margrita-removebg-preview.png" alt="" srcset="" height="760px" width="700px">
+    </div>
+    </div>
+    <footer>
+        <div id="emty"></div>
+        <div id="empty"></div>
+        <div id="socials">
+            <a href="https://www.facebook.com/groups/1072145456551406/"><img src="images/—Pngtree—facebook logo icon fb logo_3570308.png" alt="" srcset=""></a>
+            <a href="https://www.instagram.com/pizzaday.ua/"><img src="images/—Pngtree—instagram icon instagram logo_3584853.png" alt="" srcset=""></a>
+            <img src="images/5a3a185132ceb1.89894673151375675320812609.png" alt="" srcset="">
+        </div>
+        <div id="nav1">
+            
+        <a href="home.html"><br>Home » </a>
+        <a href="about.html">About Us » </a>
+        <a href="MENU.html">Menu » </a>
+    </div>
+    <div id="nav2">
+        <a href="CART.html">Cart » </a>
+        <a href="contact.html">Contact Us</a>
+    </div>
+    <div id="copyright">© 2021 PizzaDay || all rights reserved</div>
+    </footer>
+    <script src="JS/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Permanent+Marker&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@600&family=Ubuntu+Mono&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Day</title>
+    <link rel="stylesheet" href="CSS/MENU.css">
+</head>
+<body>
+    <section id="background">
+        <div id="menu" onclick="appear()">
+            <img src="images/iconfinder_menu-alt_134216.png" alt="" srcset="">
+        </div>
+        <div id="ham-menu">
+            <div id="cross" onclick="disappear()"><span id="rotate">✖</span></div><hr style="background-color: #00ff33;">
+            <div class="menu-items"><a href="home.html">Home <hr></a></div>
+            <div class="menu-items"><a href="about.html">About Us <hr></a></div>
+            <div class="menu-items"><a href="MENU.html">Menu <hr></a></div>
+            <div class="menu-items"><a href="contact.html">Contact Us <hr></a></div>
+            <div class="menu-items"><a href="CART.html">Cart <hr></a></div>
+        </div>
+        <div id="name">
+            PizzaDay
+        </div>
+        <div id="size">
+            <span>SELECT SIZE</span>
+        </div>
+        <div id="size-btn">
+            <button id=btn1 onclick="small()">S</button>
+            <button id=btn2 onclick="medium()">M</button>
+            <button id=btn3 onclick="large()" >L</button>
+        </div>
+        <div id="cart" onclick="orderPage()">
+            <img src="images/noun_Pizza Box_906703.png" alt="" srcset="">
+        </div>
+        <div id="in-cart"></div>
+        <div id="price">
+            PRICE <br>
+            <span id=rate>&#8377; 199</span>
+        </div>
+        <div id="add-to-cart" onclick= "cart()" >
+                <img src="images/noun_Pizza Box_906703.png" alt="" srcset="">
+            <span>+ ADD TO CART</span>
+        </div>
+        <div id="info-box">
+            <span id="pizza-name">
+                MARGHRITA <br>
+            </span>
+            <div id="pizza-ifo">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam eius laborum voluptates recusandae maiores, hic nostrum facere debitis 
+            </div>
+        </div>
+        </div>
+        <div id="pizza-menu"></div>
+        <div id="secondary-circle"></div>
+        <div id="primary-circle">
+            <div class="mySlides">
+                
+                <img id=pizza0 class="demo image" src="images/margrita-removebg-preview.png" alt="Marghrita">
+            </div>
+            
+            <div class="mySlides">
+                
+                <img id=pizza1 class="demo image" src="images/chicken-removebg-preview.png" alt="Chicken">
+            </div>
+            
+            <div class="mySlides">
+                
+                <img id="pizza2" class="demo image" src="images/indiana-removebg-preview.png" alt="Indiana" >
+            </div>
+                
+            <div class="mySlides">
+                
+                <img id="pizza3" class="demo image" src="images/veg-removebg-preview.png" alt="Veggie" >
+            </div>
+            
+            <div class="mySlides">
+                
+                <img id="pizza4" class="demo image" src="images/ezgif.com-gif-maker-removebg-preview (2).png" alt="Mexican">
+            </div>
+                
+            <div class="mySlides">
+                
+                <img id="pizza5" class="demo image" src="images/RUssia-removebg-preview.png" alt="Russian">
+            </div>
+            <div class="mySlides">
+                
+                <img id="pizza6" class="demo image" src="images/peproni-removebg-preview.png" alt="Peproni">
+            </div>
+                
+              <a class="prev" onclick="plusSlides(-1)">❯</a>
+              <a class="next" onclick="plusSlides(1)">❯</a>
+        </div>
+        <div onclick="currentSlide(1)" id="dot1" class="dot"  ></div>
+        <div onclick="currentSlide(2)" id="dot2" class="dot" ></div>
+        <div onclick="currentSlide(3)" id="dot3" class="dot" ></div>
+        <div onclick="currentSlide(4)" id="dot4" class="dot" ></div>
+        <div onclick="currentSlide(5)" id="dot5" class="dot" ></div>
+        <div onclick="currentSlide(6)" id="dot6" class="dot" ></div>
+        <div onclick="currentSlide(7)" id="dot7" class="dot" ></div>
+        <div id="pizzaname1">MARGRITA</div>
+        <div id="pizzaname2">CHICKEN</div>
+        <div id="pizzaname3">INDIANA</div>
+        <div id="pizzaname4">VEGGIE</div>
+        <div id="pizzaname5">MEXICAN</div>
+        <div id="pizzaname6">RUSSIAN</div>
+        <div id="pizzaname7">PEPRONI</div>
+        <img id=chilli src="images/Chilli_2_transparent_3x-removebg-preview.png" alt="" srcset="">
+        <img id=mint src="images/Mint_Transparent_3x-removebg-preview.png" alt="">
+    </section>
+    <footer>
+        <div id="emty"></div>
+        <div id="empty"></div>
+        <div id="socials">
+            <a href="https://www.facebook.com/groups/1072145456551406/"><img src="images/—Pngtree—facebook logo icon fb logo_3570308.png" alt="" srcset=""></a>
+            <a href="https://www.instagram.com/pizzaday.ua/"><img src="images/—Pngtree—instagram icon instagram logo_3584853.png" alt="" srcset=""></a>
+            <img src="images/5a3a185132ceb1.89894673151375675320812609.png" alt="" srcset="">
+        </div>
+        <div id="nav1">
+            
+        <a href="home.html"><br>Home » </a>
+        <a href="about.html">About Us » </a>
+        <a href="MENU.html">Menu » </a>
+    </div>
+    <div id="nav2">
+        <a href="CART.html"  onclick="orderPage()">Cart » </a>
+        <a href="contact.html">Contact Us</a>
+    </div>
+    <div id="copyright">© 2021 PizzaDay || all rights reserved</div>
+    </footer>
+    <script src="JS/script.js"></script>
+    <script src="order.js"></script>
+</body>
+</html>

@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Permanent+Marker&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@600&family=Ubuntu+Mono&display=swap"
+        rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Rancho&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #home {
+            display: flex;
+            flex-direction: column;
+            padding: 3px 0px;
+            height: 550px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #home::before {
+            content: "";
+            position: absolute;
+            /* background: url('images/hanxiao-Vj7SryPWsBk-unsplash.jpg') no-repeat center center/cover; */
+            /* background: url(data:image/jpeg;base64,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)no-repeat center center/cover; */
+            /* background: #acbbff; */
+            /* background: url(https://cdn.pixabay.com/photo/2018/08/23/07/35/thunderstorm-3625405__340.jpg)no-repeat center center/cover; */
+            background: url(https://cdn.pixabay.com/photo/2017/03/23/17/02/night-2168868__340.png)no-repeat center center/cover;
+            /* no-repeat center center/cover; */
+            height: 100%;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            /* z-index: -1;*/
+            /* opacity: 0.8; */
+        }
+
+        #name {
+            position: absolute;
+            display: inline-block;
+            color: aliceblue;
+            font-size: 3.9rem;
+            top: 5.2%;
+            left: 12%;
+            padding: 5px;
+            font-weight: bolder;
+            font-family: 'Sedgwick Ave', cursive;
+            z-index: 11;
+        }
+
+        #ham-menu {
+            z-index: 2;
+            position: absolute;
+            left: 0;
+            top: 0%;
+            background-color: #3f0404;
+            height: 36%;
+            width: 0%;
+            /* display: none; */
+            transition: 0.7s;
+        }
+
+        #cross {
+            display: none;
+            font-size: 2rem;
+            position: relative;
+            padding: 40px 29px;
+            padding-bottom: 25px;
+            color: aliceblue;
+            cursor: pointer;
+
+        }
+
+        #cross:hover {
+            transform: rotate(10deg);
+            transition: transform 1s;
+        }
+
+        .menu-items a {
+
+            padding: 0px;
+            font-size: 1.2rem;
+            color: white;
+            text-decoration: none;
+        }
+
+        .menu-items a:hover {
+            color: rgb(83, 255, 241);
+        }
+
+        .menu-items {
+            display: none;
+            margin-top: 10px;
+            transition: 0.5s;
+            text-align: center;
+        }
+
+        .menu-items hr {
+            margin-bottom: 2px;
+        }
+
+        #menu {
+            cursor: pointer;
+            display: inline-block;
+            position: absolute;
+            top: 2px;
+            left: 1px;
+        }
+
+        #menu img {
+            filter: invert(1);
+            height: 70px;
+            margin: 50px;
+            margin-left: 37px;
+        }
+
+        #img {
+
+            margin-right: 20px;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        #socials {
+            grid-area: "socials";
+        }
+
+        #nav1 {
+            grid-area: "nav1";
+            font-size: 1rem;
+            color: white;
+            text-decoration: none;
+        }
+
+        #nav2 {
+            grid-area: "nav2";
+
+        }
+
+        #nav1 a,
+        #nav2 a {
+            font-size: 1.3rem;
+            color: white;
+            text-decoration: none;
+            padding: 0px 12px;
+        }
+
+        #nav1 a:hover,
+        #nav2 a:hover {
+            color: #00ff2b;
+        }
+
+        #copyright {
+            font-family: 'Fjalla One', sans-serif;
+            font-size: 1rem;
+            grid-area: "copy";
+            color: rgb(148, 148, 148);
+        }
+
+        #copyright:hover {
+            color: #ff3c01;
+        }
+
+        #emty {
+            grid-area: "mt";
+            /* height: 80px; */
+        }
+
+        #empty {
+            grid-area: "emty";
+            /* height: 80px; */
+        }
+
+        footer {
+            display: grid;
+            grid-template-areas: 'mt mt'
+                'emty emyt'
+                'socials socials'
+                'nav1 nav 1'
+                'nav2 nav2'
+                'copy copy'
+                'emty emty'
+                'mt mt';
+            text-align: center;
+            background-color: #000415;
+            color: #d8cdc6;
+            width: 100%;
+            height: 390px;
+            top: 101%;
+            position: absolute;
+
+        }
+
+        footer img {
+            height: 80px;
+            width: 80px;
+        }
+
+        footer img:hover {
+            filter: invert(1);
+        }
+        #location{
+            font-size: 2.5rem;
+            color: #ffea74;
+    position: absolute;
+    top: 20%;
+    left: 7%;
+    font-family: 'Rancho', cursive;
+    
+}
+#address{
+    font-size: 1.3rem;
+    color: #ffedb1;
+    position: absolute;
+    top: 29%;
+    left: 7%;
+    display: inline-block;
+    width: 25%;
+}
+#FORM{
+    /* background:#00182e; */
+    background:#000000;
+    border: 2px solid whitesmoke;
+    border-radius: 20px;
+    position: absolute;
+    left: 55%;
+    top: 15%;
+    width: 40%;
+    height: 75%;
+}
+input, textarea{
+    display: block;
+    padding: 3px;
+    margin: 15px auto;
+    
+    width: 60%;
+    outline: none;
+    border: 2px solid black;
+    border-radius: 15px;
+}
+    #nme{
+        margin-top: 6%;
+    }
+    #nme,#mail,#query{
+        width: 80%;
+        font-size: 1.4rem;
+    }
+.btn{
+    margin: 4px auto;
+    display: block;
+    padding: 5px 12px;
+    background: #0025f7;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border: 2px solid black;
+    border-radius: 19px;
+    cursor: pointer;
+    outline: none;
+    width: 80%;
+}
+#FORM span{
+    font-size: 3rem;
+    font-weight: bolder;
+    color: white;
+    display: inline-block;
+    padding: 32px 3px;
+    width: 100%;
+    text-align: center;
+    font-family: 'Rancho', cursive;
+}
+    </style>
+</head>
+
+<body>
+    <section id="home">
+        <div id="menu" onclick="appear()">
+            <img src="images/iconfinder_menu-alt_134216.png" alt="" srcset="">
+        </div>
+        <div id="ham-menu">
+            <div id="cross" onclick="disappear()"><span id="rotate">✖</span></div>
+            <hr style="background-color: #00ff33;">
+            <div class="menu-items"><a href="home.html">Home
+                    <hr>
+                </a></div>
+            <div class="menu-items"><a href="about.html">About Us
+                    <hr>
+                </a></div>
+            <div class="menu-items"><a href="MENU.html">Menu
+                    <hr>
+                </a></div>
+            <div class="menu-items"><a href="contact.html">Contact Us
+                    <hr>
+                </a></div>
+            <div class="menu-items"><a href="CART.html">Cart
+                    <hr>
+                </a></div>
+        </div>
+        <div id="name">
+            PizzaDay
+        </div>
+       
+        <div class="mapouter">
+            <div class="gmap_canvas"><iframe width="600" height="405" id="gmap_canvas"
+                    src="https://maps.google.com/maps?q=z-square%20,kanpur%20&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                    frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a
+                    href="https://soap2day-to.com">soap2day</a><br>
+                <style>
+                    .mapouter {
+                        position: relative;
+                        text-align: right;
+                        height: 405px;
+                        width: 600px;
+                        top: 45%;
+                        left: -23%;
+                    }
+                </style><a href="https://www.embedgooglemap.net">map widget for website</a>
+                <style>
+                    .gmap_canvas {
+                        overflow: hidden;
+                        background: none !important;
+                        height: 405px;
+                        width: 600px;
+                    }
+                </style>
+            </div>
+        </div>
+        <h1 id="location">LOCATION NAME</h1>
+        <span id="address"><b>Z square Mall</b><br>
+            16, 113, Mall Rd, Bada Chauraha, Downtown, Kanpur, Uttar Pradesh 208001</span>
+            <div id="FORM">
+                <span>GET IN TOUCH</span>
+            <form action="/" method="post" id="contact">
+                <input type="text" name="name" id="nme" placeholder="Enter your name">
+                <input type="email" name="E-mail" id="mail" placeholder="Enter your E-mail">
+                <!-- <input type="text" name="gender" id="gender" placeholder="Enter your gender">
+                <textarea name="address" id="address" cols="30" rows="10" placeholder="Enter your address"></textarea> -->
+                <textarea name="more" id="query" cols="30" rows="10" placeholder="TELL US YOUR QUERY"></textarea>
+                <button class="btn">SEND MESSAGE</button>
+            </form></div>
+    </section>
+    <footer>
+        <div id="emty"></div>
+        <div id="empty"></div>
+        <div id="socials">
+            <a href="https://www.facebook.com/groups/1072145456551406/"><img
+                    src="images/—Pngtree—facebook logo icon fb logo_3570308.png" alt="" srcset=""></a>
+            <a href="https://www.instagram.com/pizzaday.ua/"><img
+                    src="images/—Pngtree—instagram icon instagram logo_3584853.png" alt="" srcset=""></a>
+            <img src="images/5a3a185132ceb1.89894673151375675320812609.png" alt="" srcset="">
+        </div>
+        <div id="nav1">
+
+            <a href="home.html"><br>Home » </a>
+            <a href="about.html">About Us » </a>
+            <a href="MENU.html">Menu » </a>
+        </div>
+        <div id="nav2">
+            <a href="CART.html" onclick="orderPage()">Cart » </a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+        <div id="copyright">© 2021 PizzaDay || all rights reserved</div>
+    </footer>
+    <script>
+        function appear() {
+            var mnu = document.getElementById("ham-menu");
+            let items = document.getElementsByClassName("menu-items");
+            var cross = document.getElementById("cross");
+            var nme = document.getElementById("name");
+            nme.style.fontSize = "1.7rem";
+            nme.style.padding = "11px";
+            var x = window.matchMedia("(max-width: 500px)")
+            myFunction(x) // Call listener function at run time
+            x.addListener(myFunction) // Attach listener function on state changes
+            function myFunction(x) {
+                if (x.matches) { // If media query matches
+                    mnu.style.width = "85%";
+                    // mnu.style.zIndex = "-1";
+                } else {
+                    mnu.style.width = "15%";
+                }
+            }
+
+
+            nme.style.marginLeft = "-80px";
+            nme.style.marginTop = "0px";
+            items[0].style.display = "block";
+            items[1].style.display = "block";
+            items[2].style.display = "block";
+            items[3].style.display = "block";
+            items[4].style.display = "block";
+            document.getElementById("cross").style.display = "block";
+        }
+        function disappear() {
+            var mnu = document.getElementById("ham-menu");
+            var nme = document.getElementById("name");
+            var cross = document.getElementById("cross");
+            var items = document.getElementsByClassName("menu-items");
+            nme.style.fontSize = "3.9rem";
+            nme.style.padding = "5px";
+            mnu.style.width = "0%";
+            nme.style.marginLeft = "0px";
+            items[0].style.display = "none";
+            items[1].style.display = "none";
+            items[2].style.display = "none";
+            items[3].style.display = "none";
+            items[4].style.display = "none";
+            document.getElementById("cross").style.display = "none";
+        }
+    </script>
+</body>
+
+</html>
